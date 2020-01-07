@@ -24,10 +24,11 @@ import android.util.Log;
             // Target: check if permission was granted;
                 // Make a call to the checkSelfPermission() method of the ContextCompat class;
                 // Pass through as arguments a reference to the current activity and the permission being requested
+                // Lastly call the request within Main Activity
             if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
                 Log.i(TAG, "Permission Denied");
             }
-
+            makeRequest();
         }
         //make the request
         protected void makeRequest() {
